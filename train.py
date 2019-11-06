@@ -128,9 +128,10 @@ validation_generator = DataGenerator(**basic_generator_params,
 
 os.makedirs("checkpoints", exist_ok=True)
 file_path = "checkpoints/flowchroma-epoch-{epoch:05d}-lr-" + str(
-    lr) + "-train_loss-{loss:.4f}-val_loss-{val_loss:.4f}.hdf5"
+    # lr) + "-train_loss-{loss:.4f}-val_loss-{val_loss:.4f}.hdf5"
+    lr) + "-train_loss-{loss:.4f}.hdf5"
 checkpoint = ModelCheckpoint(file_path,
-                             monitor=['loss', 'val_loss'],
+                             monitor=['loss'],
                              verbose=1,
                              save_best_only=False,
                              save_weights_only=False,
