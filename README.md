@@ -32,3 +32,7 @@ As initial inputs to the model, we use scaled luminance layers of frames and eac
 The high-level feature extractor is a pre-trained [Inception-Resnet-V2](https://arxiv.org/abs/1602.07261) model without the last SoftMax layer. Inception-Resnet-V2 is the current state of the art for object recognition and it is trained on ImageNet dataset. This is an instance where we leverage from transfer learning. When training the network, we do not train the Inception network, we just keep its weights untrainable while only training the Encoder, Decoder, LSTM and a part of fusion layer.
 
 Training such a massive network is indeed not an easy task, therefore we’ll be building the dataset as 16 frames per video, a video dataset of 4000 would suffice to witness some quality learning out of the network. Other than that we’ll have to fine tune the hyper-parameters for awhile as there are numbers of hyper-parameters related to this such as the number of LSTM cells, the number of LSTM layers and the number of CNN filters within the encoder as well as in the decoder.
+
+### Implementation
+
+Add data to `originals/` and run `./init.sh`. Then run `train.py`
