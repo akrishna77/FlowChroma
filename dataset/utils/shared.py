@@ -3,7 +3,7 @@ from os import makedirs
 from os.path import expanduser, join
 
 # Default folders
-dir_root = join(expanduser('~'), 'flowchroma')
+dir_root = join(expanduser('~/src/Fall 2019 - GT/DDL/Project/'), 'FlowChroma')
 dir_originals = join(dir_root, 'original')
 dir_sampled = join(dir_root, 'sampled')
 dir_resnet_images = join(dir_root, 'resized_resnet_images')
